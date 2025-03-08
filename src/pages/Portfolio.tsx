@@ -9,6 +9,7 @@ import Projects from '@/components/Projects';
 import Mentor from '@/components/Mentor';
 import PersonalFacts from '@/components/PersonalFacts';
 import Footer from '@/components/Footer';
+import LiveClock from '@/components/LiveClock';
 
 const Portfolio = () => {
   useEffect(() => {
@@ -24,6 +25,7 @@ const Portfolio = () => {
       <Header />
       <main>
         <Profile />
+        <LiveClock />
         <Skills />
         <Experience />
         <Projects />

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Coffee, Heart, Lightbulb, Users } from 'lucide-react';
+import { Coffee, Heart, Lightbulb, Users, Hash, Phone } from 'lucide-react';
 
 const FactCard = ({ icon: Icon, title, description }: { icon: React.ElementType; title: string; description: string }) => {
   return (
@@ -10,6 +10,24 @@ const FactCard = ({ icon: Icon, title, description }: { icon: React.ElementType;
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
       <p className="text-gray-400">{description}</p>
+    </div>
+  );
+};
+
+const HashmapLover = () => {
+  const [blink, setBlink] = React.useState(false);
+  
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setBlink(prev => !prev);
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);
+  
+  return (
+    <div className="flex items-center">
+      HashMap Lover <span className={`ml-1 transform transition-opacity duration-300 ${blink ? 'opacity-100' : 'opacity-0'}`}>😉</span>
     </div>
   );
 };
@@ -36,6 +54,16 @@ const PersonalFacts = () => {
       title: "Teetotaler",
       description: "Focused on clean living and clear thinking to maintain peak coding performance.",
     },
+    {
+      icon: Hash,
+      title: "Algorithm Enthusiast",
+      description: <HashmapLover />,
+    },
+    {
+      icon: Phone,
+      title: "Contact Me",
+      description: "Feel free to reach out: +91 9361677612",
+    },
   ];
 
   return (
@@ -51,13 +79,13 @@ const PersonalFacts = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {facts.map((fact, index) => (
             <FactCard 
               key={index} 
               icon={fact.icon} 
               title={fact.title} 
-              description={fact.description} 
+              description={fact.description as any} 
             />
           ))}
         </div>

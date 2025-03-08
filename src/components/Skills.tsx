@@ -6,9 +6,11 @@ import {
   Server, 
   Globe, 
   Layout, 
-  Box, 
   FileJson,
-  Map
+  Map,
+  Coffee,
+  Hash,
+  Eye
 } from 'lucide-react';
 
 const SkillCard = ({ 
@@ -56,13 +58,13 @@ const Skills = () => {
     {
       icon: Server,
       title: "Backend",
-      skills: ["Node.js", "Express.js", "RESTful APIs", "Custom Node Modules", "API Integration"],
+      skills: ["Node.js", "Express.js", "RESTful APIs", "Java", "Spring Boot", "Swagger UI"],
       delay: 100
     },
     {
       icon: Database,
       title: "Database",
-      skills: ["MongoDB", "Mongoose", "Data Modeling", "Schema Design", "Aggregation"],
+      skills: ["MongoDB", "Mongoose", "SQL", "Data Modeling", "Schema Design", "Aggregation"],
       delay: 200
     },
     {
@@ -78,10 +80,16 @@ const Skills = () => {
       delay: 400
     },
     {
+      icon: Hash,
+      title: "DSA & Problem Solving",
+      skills: ["Data Structures", "Algorithms", "LeetCode (Intermediate)", "CodingBat", "HashMap Lover 😉"],
+      delay: 500
+    },
+    {
       icon: FileJson,
       title: "Others",
       skills: ["Pagination", "Authentication", "Authorization", "Error Handling", "Testing"],
-      delay: 500
+      delay: 600
     }
   ];
 

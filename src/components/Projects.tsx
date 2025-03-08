@@ -6,13 +6,11 @@ import { LucidePackage, Code2, BrainCircuit, Bot } from 'lucide-react';
 
 const ProjectCard = ({ 
   icon: Icon, 
-  title, 
   description, 
   tags,
   comingSoon = false
 }: { 
   icon: React.ElementType; 
-  title: string; 
   description: string; 
   tags: string[];
   comingSoon?: boolean;
@@ -21,7 +19,9 @@ const ProjectCard = ({
     <div className="group relative bg-ps-gray/20 border border-white/5 rounded-xl p-6 overflow-hidden transition-all duration-300 hover:bg-ps-gray/30 hover:translate-y-[-5px] hover:shadow-lg">
       {comingSoon && (
         <div className="absolute top-3 right-3">
-          <Badge className="bg-ps-blue text-white">Coming Soon</Badge>
+          <Badge className="bg-gradient-to-r from-ps-blue via-ps-teal to-ps-accent animate-text-shimmer bg-[length:200%_auto] text-white">
+            Coming Soon
+          </Badge>
         </div>
       )}
       
@@ -29,7 +29,11 @@ const ProjectCard = ({
         <Icon size={24} />
       </div>
       
-      <h3 className="text-xl font-semibold mb-3 text-white">{title}</h3>
+      <div className="flex justify-center items-center h-16 mb-3">
+        <div className="text-2xl font-bold bg-gradient-to-r from-ps-blue via-ps-teal to-ps-accent animate-text-shimmer bg-[length:200%_auto] bg-clip-text text-transparent">
+          Coming Soon
+        </div>
+      </div>
       
       <p className="text-gray-400 mb-6 line-clamp-3">
         {description}
@@ -63,28 +67,24 @@ const Projects = () => {
   const projects = [
     {
       icon: LucidePackage,
-      title: "GIS Mapping Platform",
       description: "A web application for visualizing and analyzing geographic data using MapboxGL, with custom filtering and data manipulation capabilities.",
       tags: ["React", "MapboxGL", "Node.js", "Express", "MongoDB"],
       comingSoon: false
     },
     {
       icon: Code2,
-      title: "Advanced E-commerce Solution",
       description: "Full-featured e-commerce platform with product management, cart functionality, payment integration, and order tracking.",
       tags: ["MERN Stack", "Stripe", "Redux", "Material UI"],
       comingSoon: true
     },
     {
       icon: BrainCircuit,
-      title: "AI-Powered Analytics Dashboard",
       description: "Data visualization dashboard with AI-driven insights and predictive analytics for business intelligence.",
       tags: ["React", "TensorFlow.js", "Chart.js", "Node.js", "MongoDB"],
       comingSoon: true
     },
     {
       icon: Bot,
-      title: "Automated Task Manager",
       description: "Productivity application with automated task scheduling, reminders, and team collaboration features.",
       tags: ["MERN Stack", "Socket.io", "PWA", "Notification API"],
       comingSoon: true
@@ -109,7 +109,6 @@ const Projects = () => {
             <ProjectCard 
               key={index}
               icon={project.icon}
-              title={project.title}
               description={project.description}
               tags={project.tags}
               comingSoon={project.comingSoon}
