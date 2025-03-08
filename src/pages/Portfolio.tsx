@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { toast } from '@/components/ui/use-toast';
+import { toast } from '@/hooks/use-toast';
 import Header from '@/components/Header';
 import Profile from '@/components/Profile';
 import Skills from '@/components/Skills';
@@ -8,6 +8,7 @@ import Experience from '@/components/Experience';
 import Projects from '@/components/Projects';
 import Mentor from '@/components/Mentor';
 import PersonalFacts from '@/components/PersonalFacts';
+import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import LiveClock from '@/components/LiveClock';
 
@@ -31,6 +32,7 @@ const Portfolio = () => {
         <Projects />
         <Mentor />
         <PersonalFacts />
+        <Contact />
       </main>
       <Footer />
     </div>

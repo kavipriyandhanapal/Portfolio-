@@ -2,14 +2,14 @@
 import React from 'react';
 import { Coffee, Heart, Lightbulb, Users, Hash, Phone } from 'lucide-react';
 
-const FactCard = ({ icon: Icon, title, description }: { icon: React.ElementType; title: string; description: string }) => {
+const FactCard = ({ icon: Icon, title, description }: { icon: React.ElementType; title: string; description: React.ReactNode }) => {
   return (
     <div className="bg-ps-gray/20 border border-white/5 rounded-xl p-6 transition-all duration-300 hover:bg-ps-gray/30 hover:translate-y-[-5px]">
       <div className="mb-4 p-3 inline-block rounded-md bg-ps-accent/10 text-ps-accent">
         <Icon size={24} />
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-gray-400">{description}</p>
+      <div className="text-gray-400">{description}</div>
     </div>
   );
 };
@@ -26,9 +26,9 @@ const HashmapLover = () => {
   }, []);
   
   return (
-    <div className="flex items-center">
+    <span className="flex items-center">
       HashMap Lover <span className={`ml-1 transform transition-opacity duration-300 ${blink ? 'opacity-100' : 'opacity-0'}`}>😉</span>
-    </div>
+    </span>
   );
 };
 
